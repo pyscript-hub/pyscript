@@ -15,16 +15,13 @@ from pyscript.core.manager import init
 from pyscript.utils.console import Console
 
 
-app = typer.Typer(
-    help="🐍 pyscript — Simple modular Python script runner",
-    callback=init
-)
+app = typer.Typer(help="🐍 pyscript — Simple modular Python script runner")
 
 
 def version_callback(value: bool):
     if value:
         v = importlib.metadata.version("pyscript")
-        print(f"pyscript {v}")
+        print(f"pyscript {str(v)}")
         raise typer.Exit()
 
 
@@ -39,7 +36,7 @@ def main(
             )
         ] = None
 ):
-    pass
+    init()
 
 
 @app.command("list")
