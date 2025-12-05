@@ -181,7 +181,7 @@ The project is built on modern and robust libraries:
 
 ## 📝 Project Status
 
-Currently in **Beta (0.1.0)**.
+Currently in **Beta (0.1.1)**.
 The software is stable for daily use, but new features may be introduced in the future.
 
 ## 👤 Author
