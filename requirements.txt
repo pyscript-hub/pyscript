@@ -1,0 +1,7 @@
+psutil~=7.1.3
+rich
+typer
+setuptools
+pip~=25.3
+wheel~=0.41.2
+requests~=2.32.4

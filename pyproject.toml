@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyscript"
+version = "0.1.0"
+description = "Modular CLI for a centralize execution of Python scripts."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+
+authors = [
+    { name = "Lorenzo Zorri", email = "lorenzo.zorri.developer@gmail.com" }
+]
+
+dependencies = [
+    "rich>=13",
+    "typer>=0.9",
+    "psutil>=5.9"
+]
+
+[project.scripts]
+pyscript = "pyscript.__main__:app"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["pyscript*"]
+
+[tool.setuptools.package-data]
+pyscript = [
+    "default_scripts/*.py",
+    "default_scripts/*.json"
+]
