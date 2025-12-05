@@ -24,7 +24,7 @@
 1.  Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/pyscript.git
+    git clone https://github.com/pyscript-hub/pyscript.git
     cd pyscript
     ```
 
