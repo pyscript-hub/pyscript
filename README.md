@@ -153,9 +153,6 @@ def main():
     This is an example description that pyscript will read automatically.
     """
     print("Hello from pyscript!")
-
-if __name__ == "__main__":
-    main()
 ```
 
 When you run `pyscript add myscript.py`, the tool will detect `requests` as a dependency and install it in the dedicated venv.
@@ -187,6 +184,7 @@ The project is built on modern and robust libraries:
 ## 📝 Project Status
 
 Currently in **Beta (0.1.2)**.
+
 It represents the first public version of the project and may contain bugs or incomplete features.
 Use it for testing, exploration, and feedback purposes.
 
