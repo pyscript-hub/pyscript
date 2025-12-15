@@ -26,7 +26,7 @@ def add_script(
 
     # Check the script file exists
     if not script_path.exists():
-        Console.print_error(f"'{script_path}' does not exist" "Please provide a valid script path.")
+        Console.print_error(f"'{script_path}' does not exist", "Please provide a valid script path.")
         return
 
     # Check the script is a Python file
@@ -85,7 +85,7 @@ def _get_metadata_from_args(
         dependencies: Optional[list[tuple[str, str]]] = None
     ) -> dict[str, Any]:
     """
-    Return the metadata handling command inputs, if no metadata can be found or retrieved it returns None.
+    Return the metadata handling command inputs or retrieving them from the script.
 
     Arguments:
         script_path: path to the script

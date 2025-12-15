@@ -263,6 +263,7 @@ def update_single(script: str, script_path: str, update_metadata: bool = False) 
     Arguments:
         script: name of the script to update.
         script_path: path to the script file which will replace the old one.
+        update_metadata: flag to automatically update the metadata file of the script.
     """
 
     Console.print(f"🔧 Updating [bold]{script}[/]...")
@@ -286,6 +287,15 @@ def _update_single_metadata(script: str, script_path: str) -> None:
         script: name of the script to update.
     """
 
+    # Generate metadata from the script if no metadata file is found
+    if not metadata_manager.exists(script):
+        Console.print_warning(f"metadata for [bold]{script}[/] not found")
+        Console.print(f"🔧 Generating metadata for [bold]{script}[/]...")
+        metadata = metadata_manager.extract(script)
+        metadata_manager.save(script, metadata)
+        return
+
+    # Update the metadata dependencies
     Console.print(f"🔧 Updating metadata for [bold]{script}[/] to match the latest version...")
     dependencies = script_manager.extract_dependencies(Path(script_path))
     new_values = {"dependencies": dependencies}

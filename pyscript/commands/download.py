@@ -91,10 +91,8 @@ def download_multiple_scripts(scripts: list[str]) -> None:
                     progress.advance(task_id)
                     continue
 
-                Console.print_warning(f"[bold]{script_name}[/] already exists as a custom script")
-                if not Console.confirm_action("Do you want to overwrite it?"):
-                    Console.print(f"Download of [bold]{script_name}[/] skipped.")
-                    continue
+                Console.print_warning(f"[bold]{script_name}[/] already exists as a custom script", "Delete it if you want to download the standard one.")
+                continue
 
             # Download the metadata
             try:

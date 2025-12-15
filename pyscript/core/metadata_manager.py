@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from typing import Any, Optional
 
+from pyscript.core import script_manager
 from pyscript.core.manager import METADATA_DIR
 from pyscript.core.script_manager import extract_description, extract_dependencies
 from pyscript.utils import file
@@ -10,6 +11,21 @@ REQUIRED_FIELDS = [
     ("dependencies", []),
     ("type", "custom")
 ]
+
+
+def exists(script_name: str) -> bool:
+    """
+    Checks if the metadata file of a script exists.
+
+    Arguments:
+        script_name: name of the script to check.
+
+    Returns:
+        A boolean indicating if the metadata file exists.
+    """
+
+    path = _get_path(script_name)
+    return Path(path).exists()
 
 
 def generate(script_name: str,
@@ -44,7 +60,7 @@ def generate(script_name: str,
     return metadata
 
 
-def extract(script_path: Path) -> dict:
+def extract(script_name: str) -> dict:
     """
     Extract the metadata from a script.
     Features:
@@ -52,13 +68,13 @@ def extract(script_path: Path) -> dict:
     - external dependencies (only top-level, without standard modules)
 
     Arguments:
-        script_path: path to the script
+        script_name: name to the script
 
     Returns:
         a dictionary of the metadata
     """
 
-    script_name = script_path.stem
+    script_path = script_manager.get_path(script_name)
     description = extract_description(script_path)
     dependencies = extract_dependencies(script_path)
 

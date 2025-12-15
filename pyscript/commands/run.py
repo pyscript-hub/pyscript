@@ -34,8 +34,7 @@ def run_script(script_name: str, extra_args: Optional[Any] = None):
         metadata = metadata_manager.get(script_name)
         metadata_manager.complete(metadata)
     except FileNotFoundError:
-        script_path = script_manager.get_path(script_name)
-        metadata = metadata_manager.extract(script_path)
+        metadata = metadata_manager.extract(script_name)
         metadata_manager.save(script_name, metadata)
 
     # Prepare virtual environment if necessary

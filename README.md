@@ -2,6 +2,11 @@
 
 **Simple modular Python script runner**
 
+> **Note:**
+> This is version **0.1.2 – Beta release**.
+> It represents the first public version of the project and may contain bugs or incomplete features.
+> Use it for testing, exploration, and feedback purposes.
+
 `pyscript` is a modular CLI (Command Line Interface) designed to centralize, manage, and execute Python scripts. Forget about navigating through endless folders and manually activating virtual environments: `pyscript` handles everything for you, allowing you to launch your favorite tools from anywhere in your terminal.
 
 ## ✨ Key Features
@@ -181,8 +186,9 @@ The project is built on modern and robust libraries:
 
 ## 📝 Project Status
 
-Currently in **Beta (0.1.1)**.
-The software is stable for daily use, but new features may be introduced in the future.
+Currently in **Beta (0.1.2)**.
+It represents the first public version of the project and may contain bugs or incomplete features.
+Use it for testing, exploration, and feedback purposes.
 
 ## 👤 Author
 
